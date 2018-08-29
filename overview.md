@@ -166,16 +166,6 @@ We've set up a service for you that will send out "live" data so that you can se
 
 To use this service, you will need to make a request to our secure server. It gives a maximum of the 10 most recent datapoints, ordered by `sequence_number`. New datapoints come in every 2-3 minutes. 
 
-```python
-import requests
-api_key = 'vYm9mTUuspeyAWH1v-acfoTlck-tCxwTw9YfCynC'
-url = 'https://hxobin8em5.execute-api.us-west-2.amazonaws.com/api/'
-sequence_number = 0
-response = requests.post(url, json={'api_key': api_key,
-                                    'sequence_number': sequence_number})
-raw_data = response.json()
-
-```
 
 1. Write a function that periodically fetches new data, generates a predicted fraud probability, and saves it to your database (after verifying that the data hasn't been seen before).
 
